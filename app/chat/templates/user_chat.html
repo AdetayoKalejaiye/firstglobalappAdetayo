@@ -1,0 +1,25 @@
+{%extends 'chathome.html'%}
+
+{%load static%}
+
+{% block chat_content %}
+<div id="chat-header">
+    <img src="{% static 'img/avatar.png' %}" alt="Avatar">
+    <h1>{{ receiver.username }}</h1>
+</div>
+<div id="chat-messages">
+    {% for message in messages %}
+        <div class="message"> {% if message.sender == user %}sent{% else %}received{% endif %}
+            <p>{{ message.content }}</p>
+            <p class="timestamp">{{ message.timestamp }}</p>
+        </div>
+    {% endfor %}
+</div>
+<div id="message-input">
+    <form id="message-form" method="post">
+        {% csrf_token %}
+        <input type="text" name="content" placeholder="Type your message here..." required>
+        <button type="submit">Send</button>
+    </form>
+</div>
+{% endblock %}

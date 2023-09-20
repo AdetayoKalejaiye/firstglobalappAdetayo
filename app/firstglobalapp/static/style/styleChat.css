@@ -1,0 +1,170 @@
+/* Your CSS code for styling goes here */
+/* Example styling for buttons, forms, and containers */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Light gray background */
+    color: #333; /* Dark gray text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#side-panel {
+    float: left;
+    width: 30%;
+    background-color: #303030; /* Dark background for side panel */
+    color: #ffffff; /* White text */
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+}
+
+#main-panel {
+    margin-left: 30%;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+.chat {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    text-decoration: none;
+    color: #ffffff; /* White text */
+}
+
+.chat img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.timestamp {
+    margin-left: auto;
+}
+
+/* Styling for User List (users.html or home.html) */
+#user-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .user-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #user-list-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  #user-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Styling for User Profile (user_profile.html or user_chat.html) */
+  #user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #user-profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #user-profile-info {
+    margin-left: 10px;
+  }
+  
+  #user-profile-username {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Styling for Message Input (user_chat.html or group_chat.html) */
+  #message-input {
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  #message-input input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  #message-input button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+  }
+  
+  #message-input button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+.message {
+    border-radius: 5px;
+
+    border-bottom: 3px solid #444;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #086620;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}

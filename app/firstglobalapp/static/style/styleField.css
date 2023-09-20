@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    color: white;
+}
+
+h1 {
+    color: #0b9b12;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    padding: 5px;
+    width: 10%;
+    background-color:rgb(255, 255, 255);
+} 
+
+#toolbar {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 100%;
+    background-color:rgb(255, 255, 255);
+    color: #0b9b12;
+    font-family: 'Cascadia Code', 'Times New Roman';
+    border: groove;
+}
+
+#toolbar * {
+    margin-bottom: 6px;
+}
+
+#toolbar label {
+    font-size: 80%;
+    margin-top: 15px;
+}
+
+#clear{
+    background-color: #0b9b12;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 2px;
+}
+
+.drawing-board {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url({% static 'img/PlayingField.png' %});
+}
+
+
+/* Style for the eraser button */
+.eraser-button {
+    background-color: #FF5733; /* Change to your desired eraser button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+  
+  /* Style for the active eraser button */
+  .eraser-button:enabled {
+    background-color: #1d994d; /* Change to your desired active eraser button color */
+  }
+  
+
+/* Style for the notes container and note elements */
+#notes-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px; /* Adjust width as needed */
+    background-color: #f0f0f0;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto; /* Enable scrolling if there are many notes */
+  }
+  
+  .note {
+    margin-bottom: 20px; /* Increase the margin to provide more space */
+    padding: 10px; /* Increase the padding for a larger clickable area */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+  }
+  
+  /* Style for the edit and delete buttons */
+  .edit-button, .delete-button {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  /* Style for the 'Edit' text displayed when hovered on */
+  .edit-button.hovered:after {
+    content: 'Edit';
+    display: inline-block;
+    margin-left: 5px; /* Add some space between the button and the text */
+  }
+  
+  /* Show the buttons by default */
+  .note .edit-button, .note .delete-button {
+    display: inline-block;
+  }
+  
+  /* Show the buttons when hovering over a note */
+  .note:hover .edit-button,
+  .note:hover .delete-button {
+    display: inline-block;
+  }
+  
+  /* Add some space between note text and buttons */
+  .note {
+    margin-bottom: 10px; /* Adjust the margin for more space */
+  }
+
+  #hydrogen-hub-1,
+  #hydrogen-hub-2 {
+    position: absolute;
+    width: 5%;
+    height: auto;
+    visibility: none;
+    cursor:grab;
+    /* left: 50%;
+    top: 50%;*/
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+  }
+
+  #dialog-container {
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
+    display: none;
+  }
+  
+  #dialog-bubble {
+    position: relative;
+    background-color: #0b9b12; /* Adjust the background color as needed */
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+  }
+  
+  #dialog-bubble::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent black transparent; /* Adjust the border color and size as needed */
+    top: -20px; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    -webkit-user-drag: none;
+    
+  }
+
+  #notes-container {
+    /* Other styles for the container, if needed */
+    height: auto; /* Allow the container to grow vertically */
+    max-height: 300px; /* Set a maximum height if necessary to limit growth */
+    overflow: auto; /* Add vertical scrollbar when needed */
+  }
+  
+  .note {
+    /* Other styles for individual notes */
+    white-space: pre-wrap; /* Wrap text and preserve line breaks */
+    resize: both;
+    overflow: auto;
+  }
+  

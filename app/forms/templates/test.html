@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href ={% static "style/styleForm.css" %} rel="stylesheet">
+    <title>Log-in Page</title>
+</head>
+<body>
+    <div>
+        <form class = "form" method="post">
+            {% csrf_token %}
+            <section class="form_header">
+                <h2>Register your team!</h2>
+            </section>
+           {{form.as_p}}
+           <br><button type="submit" class="form_submit" >Submit</button>
+            <br> <p id ="sign_in_text"> If your team has been registered <a href ={%url "signIn" %} id="sign_in_link">sign in</a></p>
+        </form> 
+       
+    </div>
+</body>
+</html>

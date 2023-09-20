@@ -1,0 +1,99 @@
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a common background color */
+body {
+  background-color: #f0f0f0; /* Light gray background */
+  font-family: Arial, sans-serif;
+}
+
+/* Create three equal-width fullscreen columns */
+.column {
+  float: left;
+  width: 33.33%; /* Equal width for three columns */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Center align text horizontally */
+  display: flex;
+  align-items: center; /* Center align text vertically */
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out; /* Smooth color transition on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Define button colors and hover styles */
+/* Apply this CSS to the three buttons */
+#chatbutton, #gamebutton, #documentationbutton {
+  background-color: #3498db; /* Blue background color */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 20px; /* Add some padding to the buttons */
+  font-size: 20px; /* Increase font size for better readability */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  margin-bottom: 10px; /* Add some spacing between buttons */
+  border-radius: 5px; /* Add rounded corners to buttons */
+  text-align: center; /* Center text horizontally */
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+/* Hover effect: Darken the background color slightly */
+#chatbutton:hover {
+  background-color: #2980b9; /* Slightly darker blue on hover */
+}
+
+#gamebutton:hover {
+  background-color: #cf4030;
+}
+/* Responsive layout for small screens */
+@media screen and (max-width: 768px) {
+  #chatbutton, #gamebutton, #documentationbutton {
+      font-size: 16px; /* Decrease font size on smaller screens */
+  }
+}
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a common background color */
+body {
+  background-color: #f0f0f0; /* Light gray background */
+  font-family: Arial, sans-serif;
+}
+
+/* Create three equal-width fullscreen columns */
+.column {
+  float: left;
+  width: 33.33%; /* Equal width for three columns */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Center align text horizontally */
+  display: flex;
+  align-items: center; /* Center align text vertically */
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out; /* Smooth color transition on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Define button colors and hover styles */
+#chatbutton {
+  background-color: #3498db; /* Blue color for Chat button */
+  color: #fff; /* White text color */
+}
+
+#gamebutton {
+  background-color: #e42510; /* Red color for Game button */
+  color: #fff; /* White text color */
+}
+
+#documentationbutton {
+  background-color: #27ae60; /* Green color for Documentation button */
+  color: #fff; /* White text color */
+}
+
+/* Hover effect for all buttons */
+.column:hover {
+  background-color: #333; /* Darker background color on hover */
+}

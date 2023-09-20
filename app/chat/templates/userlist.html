@@ -1,0 +1,15 @@
+
+{%load static%}
+<div class="container">
+    <ul class="user-list">
+        {% for user in users %}
+            <li class="user-list-item">
+                <div class="user-info">
+                    <h3 class="user-name">{{ user.username }}</h3>
+
+                    <!-- Add other user profile information here -->
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

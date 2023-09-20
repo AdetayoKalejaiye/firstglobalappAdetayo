@@ -1,0 +1,66 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href= {% static "style/styleField.css" %} rel="stylesheet">
+  <title>Game Field</title>
+</head>
+<body>
+  <div id="google_translate_element" style="display: none;"></div>
+  <section class="container">
+    <div id="toolbar">
+      <h1>Draw</h1>
+      <label for="stroke">Stroke</label>
+      <input id="stroke" name="stroke" type="color">
+      <label for="lineWidth">Line Width</label>
+      <input id="lineWidth" name="lineWidth" type="range" value="5" min="5" max="25">
+      
+      <!-- Add Eraser Button -->
+      <p><input type="checkbox" id="eraser" class="eraser-button">Eraser</p>
+      <button id="clear">Clear</button> 
+      <!-- Add an input field for adding notes -->
+      <input type="text" id="note-input" placeholder="Add a note">
+      <button id="add-note">Add</button>
+      
+      <!-- Add a container to display notes -->
+      <div id="notes-container"></div>
+      <label for="draggableHubs">Make hydrogen hubs draggable:</label>
+      <input type="checkbox" id="draggableHubs"/>
+    </div>
+    <div class="drawing-board" id="canvas-div">
+      <canvas id="drawing-board"></canvas>
+      <img src={% static "img/hydrogen-hub.png" %} id="hydrogen-hub-1">
+      <img src={% static "img/hydrogen-hub2.png" %} id="hydrogen-hub-2">
+      <div id="dialog-container">
+        <div id="dialog-bubble">
+          <p>This is a hydrogen hub.</p>
+        </div> 
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    <script>
+      function showTranslationAlert() {
+        // Define the alert message
+        const alertMessage = `
+            Translation Options:
+            - You can translate this page to your preferred language using the Google Translate widget.
+            - To improve your drawing experience, click the 'X' on the widget to switch to English.
+        `;
+
+        // Display the alert
+        alert(alertMessage);
+    }
+    window.onload = showTranslationAlert
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src={% static "script/gamefield.js" %}></script>
+</body>
+</html>

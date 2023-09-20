@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href ={% static "style/styleForm.css" %} rel="stylesheet">
+    <title>Log-in Page</title>
+</head>
+<body>
+    <div id="google_translate_element"></div>
+    <div class="form">
+
+                {% csrf_token %}
+                <h2>Sign In</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.username.label_tag }} {{ form.username }} <br>
+                    {{ form.password.label_tag }} {{ form.password }} <br>
+                    {{ form.remember_me }} Remember Me<br>
+                    <button type="submit" class="form_submit">Sign In</button>
+                </form>
+                {% if form.errors %}
+                <p class="error">Please correct the errors</p>
+                {% endif %}
+                <br> <p id ="sign_in_text"> If you have not created an account <a href ={%url "signUp" %} id="sign_up_link">sign up</a></p>
+
+
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+        
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

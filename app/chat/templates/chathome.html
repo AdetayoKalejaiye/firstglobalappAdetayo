@@ -1,0 +1,107 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock %}</title>
+    <link href={%static 'style/styleChat.css'%} rel="stylesheet">
+</head>
+<body>
+    
+    {% block content %}
+    <div id="side-panel">
+        <div id="google_translate_element"></div>
+        <div class="user-profile">
+            <a href="{% url 'chat'%}" style="color: inherit; text-decoration: none;"> <h2>Username: {{user.username}}</h2></a>
+        </div>
+        <form action="" method="get">
+            <input type="text" name="q" placeholder="Search for users and groups">
+            <button type="submit">Search</button>
+        </form>
+        
+        <h2>Your Groups</h2>
+        {% for group in groups %}
+        
+        <a href="{% url 'group_chat' group_id=group.id %}">
+            <div class="chat">
+                <img src= {%static 'img/group_avatar.jpeg'%} alt="Group Avatar">
+                <div class="chat-info">
+                    <h3>{{ group.name }}</h3>
+                    <!-- Display the last message content and timestamp -->
+                    <p>Last Message: {{ group.messages.last.content }}</p>
+                    <p class="timestamp">{{ group.messages.last.timestamp }}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        <div id="users">
+            <h2>Users</h2>
+            <div id="user-list">
+                {% for user in users %}
+                <li class="user-list-item">
+                    <a href="{% url 'user_chat' receiver_id=user.id %}" style="color: inherit; text-decoration: none; width: 100%;">
+                    <div class="user-info">
+                        <h3 class="user-name">{{ user.username }}</h3>
+                    </div>
+                </a>
+                <!-- <button class="initiate-chat-btn" data-receiver-id="{{ user.id }}" onclick="initiateChat(this)">Initiate Chat</button> -->
+            </li>
+            {% endfor %}
+        </div>
+        <button id="create-group-btn" class="bottom-right">
+            <a href="{% url 'create_group_chat' %}">
+                &#128101; Create Group Chat
+            </a>
+        </button>
+    </div>
+    
+</div>
+
+
+</div>
+<div id="main-panel">
+    <!-- This is where the chat content will be displayed -->
+    {% block chat_content %}{% endblock %}
+</div>
+{% endblock content%}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function initiateChat(button) {
+        var receiverId = button.getAttribute("data-receiver-id");
+        var baseUrl = window.location.origin; // Get the base URL (e.g., "http://example.com")
+        var newUrl = baseUrl + "/chat/user_chat/" + receiverId + "/";
+        window.location.href = newUrl; // Navigate to the new URL
+    }
+    
+    let userInput = "";
+    
+    // Listen for input changes and update the variable
+    const inputElement = document.getElementById("text"); // Replace with the actual input element
+    inputElement.addEventListener("input", (event) => {
+        userInput = event.target.value;
+    });
+    const scrollPosition = window.scrollY;
+    
+    setInterval(function() {
+        location.reload();
+    }, 5000);
+    
+    window.scrollTo(scrollPosition)
+    inputElement.innerHTML =userInput
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+
+
+
+

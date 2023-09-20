@@ -1,0 +1,93 @@
+/*All*/
+
+
+* {
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(to top left, rgb(255, 255, 255), white, white, rgb(10, 114, 50));
+    background-repeat: no-repeat;
+    height: 100%;
+}
+/*Forms*/
+
+.form {
+    background-color: #ffffff;
+    display: block;
+    margin: 20px auto 0 auto;
+    border-radius: 15px;
+    border-style: ridge;
+    border-color: rgb(10, 114, 50);
+    border-width: thin;
+    padding: 40px;
+    width:fit-content;
+    color: rgb(10, 114, 50);
+    font-weight: bold;
+}
+.form .form_prompt {
+    font-size: 24px;
+    margin-bottom: 4px;
+    font-family: 'Cascadia Code';
+}
+
+.form .form_input {
+    border-radius: 0px;
+    height: 20px;
+}
+
+.form .form_submit {
+    text-align: center;
+    display: block;
+    margin: auto ;
+    color: #ffffff;
+    font-weight:500;
+    padding: 10px;
+    border:  ridge, rgb(10, 114, 50);
+    border-radius: 5px;
+    background-color: rgb(10, 114, 50);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form .form_submit:hover {
+    background-color: #ffffff;
+    color: rgb(10, 114, 50);
+}
+
+.form .form_header {
+    text-align: center;
+    color: rgb(10, 114, 50);
+    font-family: Century Gothic, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px groove;
+   
+}
+
+.form #sign_in_text {
+    margin-top: 5px;
+    color: black;
+}
+
+.form a {
+    color: rgb(10, 114, 50);
+    text-decoration: none;
+}
+.form a:hover {
+    color:rgb(12, 69, 119);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 650px) {
+    .form {
+      width: 90%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+
+
+body {
+    overflow:hidden!important;
+}
